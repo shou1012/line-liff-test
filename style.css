@@ -9,6 +9,13 @@ table {
     word-break: break-all;
 }
 
+.krokun{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("img/normal.png");
+    background-size: 100%;
+}
+
 .div{
     max-width: 100%;
     text-align: center;
@@ -18,9 +25,9 @@ table {
     text-align: center;
 }
 
-img { 
-    max-width: 25%; 
-    height: auto; 
+img {
+    max-width: 25%;
+    height: auto;
 }
 
 #profileimagediv{
