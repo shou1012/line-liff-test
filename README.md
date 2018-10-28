@@ -1,99 +1,76 @@
-# LIFF Starter App
+# ファミくろ！
 
-This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.me/en/docs/liff/overview/). 
+[![Product Name](image.png)](https://youtu.be/60e4YrmYgkE)
 
-## Prerequisites
-* [A channel on the LINE Developers Console](https://developers.line.me/en/docs/liff/getting-started/) for your application.
-* [A channel access token](https://developers.line.me/en/docs/liff/getting-started/#preparing-channel-access-token)
-* A [Heroku account](https://www.heroku.com)
+<blockquote class="imgur-embed-pub" lang="en" data-id="LU59JO0"><a href="//imgur.com/LU59JO0">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
-## Deploying the application
+## 製品概要
+### 家族 × コミュニケーション × Tech
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/line/line-liff-starter)
+### 背景
+#### ターゲット
+離れて暮らし、忙しくてあまり家族同士のコミュニケーションが取れていない家族
 
-1. Click the above "Deploy to Heroku button".
-2. Fill in the required information on the "Create a New App" page in Heroku.
-3. Select Deploy app and confirm that your app is successfully deployed.
-4. Record the app URL (https://{Heroku app name}.herokuapp.com). You will set this URL when you add the app to LIFF.
+#### 現状・課題
+離れて暮らす家族のコミュニケーションが、生活リズムのズレや忙しさによって希薄になっている。
+実際自分たち身の回りの大学生や社会人にそのような時間があるかとアンケートをとったところ、
+8割以上の人がそう感じると回答した。
+また、連絡をとってもタイミングが合わないためにテキストベースのコミュニケーションになってしまい、
+家族間に本来あるべきの温かみを感じ取りにくくなってしまっている。
 
-## Adding the starter app to LIFF
+#### ストーリー
+地方で暮らす母と都内で一人暮らしをする息子。
+日々仕事に励む息子は、早朝に家を出て帰宅も遅くなってしまってなかなか母親と連絡を取れていなく、
+少し気がかりになっていた。
+一方で母も息子を気にしてlineで近況を聞くが既読が着いてから返信が遅かったり無視をされてしまうことが多々あり、
+あまり仕事の邪魔をしないほうがいいのかもしれないと連絡を控えてしまっている。
 
-Add the app to LIFF. For more information, see [Adding a LIFF app](https://developers.line.me/en/docs/liff/registering-liff-apps/).
+そんな2人に、今回のサービス「ファミクロ」を使用してもらいたい。
 
-## Running the application
+### 製品説明（具体的な製品の説明）
+[Imgur](https://i.imgur.com/4ete0GV.png)
 
-1. To run this application, host these files on a web server.
-2. Set your LIFF's entryUrl to point to index.html.
-3. Open your LIFF in the LINE app.
+### 特長
 
+#### 1. line botからAWSにオーディオファイルを送信
 
-## Trying it out
+#### 2. line beaconによって帰宅時を判定しpush通知を行う
 
-To open the LIFF app within the LINE app, follow the steps below.
+#### 3. CloverにてAWSからオーディオファイルを取得し再生
 
-1. Tap `line://app/{liffId}` on the chat screen of the LINE app. `{liffId}` is the LIFF app ID returned to the API request to add the app to LIFF.
+### 解決出来ること
 
-2. Agree to grant the required permissions to the LIFF app.
+日々の忙しさや生活リズムのズレに関わらず、
+自分が落ち着いたタイミングで家族との接点を持つことによって
+家族とのコミュニケーションのきっかけを作る。
 
-3. When opening the LIFF app, the following four buttons and the content of received information are displayed.
+### 今後の展望
+- line beaconの判定領域を制御する(帰宅タイミングをより正確に取得する)
+- 音声入力をline botのみではなく、マイク搭載のデバイスで送信できるようにする
 
-    - Open Window: Opens `https://line.me` in the in-app browser of the LINE app.
-    - Close Window: Closes the LIFF app.
-    - Get Profile: Gets the current user's profile.
-    - Send Messages: Sends a sample message on behalf of the user if the LIFF app is opened in the chat screen.
+## 開発内容・開発技術
+### 活用した技術
+#### API・データ
+* Line Messaging API
+* Clover
+* Clover Skill Extention
+* Line Beacon
+* AWS
 
+#### フレームワーク・ライブラリ・モジュール
+* node.js
+* Ruby on Rails
+* CEK SDK node.js
 
-For API calls associated with the buttons, see [Calling the LIFF API](https://developers.line.me/en/docs/liff/developing-liff-apps#calling-liff-api). For the received information, see [Initializing the LIFF app](https://developers.line.me/en/docs/liff/developing-liff-apps#initializing-liff-app).
+#### デバイス
+* Line Beacon
+* Line Clover
 
-## Checking logs
-
-To get more information, you can check the logs of your app using [Heroku CLI][heroku-cli].
-
-1. Log in to Heroku from the command line.
-
-    ```shell
-    $ heroku login
-    ```
-
-1. Check the logs.
-
-    ```shell
-    $ heroku logs --app {Heroku app name} --tail
-    ```
-
-## Downloading and making changes to the starter app
-
-You can download the starter app to your local machine to test and make changes for yourself. You can then deploy the app to a web server of your choice. Here, we'll look at how to make and deploy changes to the Heroku app you created in the previous step.
-
-1. Make sure you have the following installed
-    - [Git](https://git-scm.com/)
-
-1. Clone the [line-liff-starter](https://github.com/line/line-liff-starter) GitHub repository.
-
-    ```shell
-    git clone https://github.com/line/line-liff-starter.git
-    ```
-
-1. `cd` into your Git directory.
-1. Add a remote for Heroku to your local repository.
-
-    ```shell
-    $ heroku git:remote -a {Heroku app name}
-    ```
-
-1. Make edits and commit changes (optional).
-
-    ```shell
-    $ git add .
-    $ git commit -m "First commit"
-    ```
-
-1. Push changes to Heroku master.
-
-    ```shell
-    $ git push heroku master
-
-
-[console]: /console/ 
-[heroku]: https://www.heroku.com/
-[heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
+### 独自開発技術（Hack Dayで開発したもの）
+#### 2日間に開発した独自の機能・技術
+* line botにて、メッセージの送信者と受信者のユーザー情報を入力してもらい、AWSにて登録・グループ化
+* line botから音声ファイルとユーザー情報をAWSに送信
+* 該当するグループから送信先のユーザー情報に紐づけて音声ファイルと共にAWSに格納
+* Clover Skill にて自分のlineのユーザー情報から該当する音声情報を取得、最新のものを再生
+* 自宅に設置してあるbeaconが、帰宅時に帰宅したことを判定し自動でAWSサーバーに新着メッセージの有無を確認
+* メッセージが存在している時、botにて新着メッセージがあることをプッシュ通知
