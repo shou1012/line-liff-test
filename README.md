@@ -28,7 +28,7 @@
 そんな2人に、今回のサービス「ファミクロ」を使用してもらいたい。
 
 ### 製品説明（具体的な製品の説明）
-[Imgur](https://i.imgur.com/4ete0GV.png)
+[Imgur](https://raw.github.com/wiki/shou1012/line-liff-test/img/main.png)
 
 ### 特長
 
